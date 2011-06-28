@@ -35,6 +35,7 @@ desc
 	gem.authors = ["Steven! Ragnarök"]
 	# dependencies defined in Gemfile
 end
+
 Jeweler::RubygemsDotOrgTasks.new
 
 require 'rspec/core'

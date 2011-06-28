@@ -1,0 +1,2 @@
+class Snidely::Register
+end
