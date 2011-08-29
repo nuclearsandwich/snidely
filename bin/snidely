@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+template_dir = Dir.pwd
+home_dir = ARGV[0] || ENV['HOME']
+Dir.glob("*").each do |file|
+	puts "would link #{file} to $HOME/.#{file}"
+end
