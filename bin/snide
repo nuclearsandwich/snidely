@@ -1,7 +1,14 @@
 #!/usr/bin/env ruby
 
-template_dir = Dir.pwd
-home_dir = ARGV[0] || ENV['HOME']
-Dir.glob("*").each do |file|
-	puts "would link #{file} to $HOME/.#{file}"
+require 'thor'
+require_relative '../lib/snidely'
+
+class Snide < Thor
+	desc "dryrun TEMPLATE_DIR DESTINATION_DIR",
+		"print files that would have been linked and their destination"
+	def dryrun template_dir, destination_dir
+		# Create a new Snidely run using the current directory as a template dir.
+		Snidely::Run.new template_dir, destination_dir
+	end
 end
+Snide.start
